@@ -1,0 +1,106 @@
+
+/* Form Container */
+.formulario__container {
+    background:  var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+    color:  var(--white);
+    width: fit-content;
+    margin: auto;
+    z-index: 2;
+    animation: formSlideUp 0.5s ease-out;
+}
+
+.formulario__container form {
+    backdrop-filter: blur(10px);
+    padding-bottom: 8px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.formulario__container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@keyframes formSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Elements */
+.formulario__container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.formulario__container input, textarea, .filter-select, .comment-input {
+    width: 100%;
+    padding: 0.625rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+.formulario__container input:focus, textarea:focus, .filter-select:focus, .comment-input:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+
+/* Password Container */
+.password-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.toggle-password, .toggle-repeat-password {
+    color:var(--primary-color); /* Cambié aquí el color para el icono del ojo */
+    position: absolute;
+    right: 0.75rem;
+    top: 33%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    font-size: 0.875rem;
+}
+
+.toggle-password:hover, .toggle-repeat-password:hover {
+    opacity: 1;
+}
+
+/* Form buttons container */
+.formulario__container form > div:last-child {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 640px) {
+    .formulario__container {
+        padding: 1rem;
+    }
+}

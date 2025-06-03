@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Daw</title>
+	<link rel="stylesheet" href="./client/styles/estilos.css">
+    <script src="./client/js/service/initDb.js" defer></script>
+    <script type="module" src="./client/js/menu.js" defer></script>
+    <script src="./client/js/modal.js" defer></script>
+    <script type="module">
+        import { scrollToElementId, parseTipo, colorAleatorio, handleSkeleton, showErrorMessage, checkIfImgExists } from "./client/js/helper.js";
+    </script>
+    <script type="module">
+        import { checkValidContent } from "./client/js/validation.js";
+    </script>
+    <script type="module">
+        import { default as handleFetchData } from "./client/js/service/services.js";
+    </script>
+    <script type="module" src="./client/src/pages/home/home.js" defer></script>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="logo-container">
+            <div class="logo">
+                <figure><img width="20" src="client/assets/logo-negro.jpg"></figure>
+            </div>
+            <p class="solo-escritorio logo-texto">interiordesign.com</p>
+        </div>
+        <!-- Menu hamburguesa -->
+        <div class="solo-mobile">
+            <a href="javascript:void(0);" id="menu-hamburguesa" class="menu-hamburguesa">
+                ☰
+            </a>
+        </div>
+        <!-- Menu normal -->
+        <nav class="solo-tablet" id="navbar">
+            <ul class="menu" id="menu">
+                <li>
+                    <a id="login-button" class="button button-primary txt-color-white" href="./client/src/pages/autentication/autentication.html">LOGIN</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <!-- Lista Menu hamburguesa -->
+        <div class="solo-mobile" id="menu-hamburguesa-lista">
+            <div id="menu-hamburguesa-lista-container">
+                <a id="login-button-hamburguesa" href="./client/src/pages/autentication/autentication.html">LOGIN</a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div id="error-mensaje"  class="mensaje-container error-mensaje hidden"></div>
+        <div class="skeleton-container" id="skeleton-container">
+            <div class="skeleton" style="height:40px;"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+        </div>
+        <section class="content hidden" id="content">
+            <button id="add-post-button" class="button button-primary hidden">Añadir post</button>
+            <div class="display-space-around">
+                <div>
+                    <label for="filter-type-select">Filtro por tipo:</label>
+                    <select id="filter-type-select" name="filter-type-select" class="filter-select"></select>
+                </div>
+                <div id="filter-user-select-container" class="hidden">
+                    <label for="filter-user-select">Filtro por usuario:</label>
+                    <select id="filter-user-select" name="filter-user-select" class="filter-select">
+                        <option value="allUsers">Todos los usuarios</option>
+                        <option value="miUser">Mis posts</option>
+                    </select>
+                </div>
+            </div>
+            <div id="posts-container" class="posts-container "> 
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Proyecto Daw. Todos los derechos reservados.</p>
+            <nav class="footer-nav">
+                <a href="#">Términos y condiciones</a>  ∣ 
+                <a href="#">Política de privacidad</a>  ∣ 
+                <a href="#">Contacto</a>
+            </nav>
+            <div class="social-media">
+                <a href="#"><img src="client/assets/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="client/assets/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="client/assets/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="editPostModal" class="modal">
+        <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <h2>Editar Post</h2>
+            <form id="editPostForm">
+                <input type="hidden" id="modalPostId" name="id">
+                <div id="Type-container">
+                    <label for="modalPostType">Tipo:</label>
+                    <select id="modalPostType" name="modalPostType"></select>
+                </div>
+                <label for="modalPostTitle">Título:</label>
+                <input type="text" id="modalPostTitle" name="title" required><br>
+                <label for="modalPostContent">Contenido:</label>
+                <textarea id="modalPostContent" name="modalPostContent" rows="5" required></textarea>
+            </form>
+            <div class="button-container">
+                <button class="button button-primary full" id="modalPostSave" type="button">Guardar</button>
+                <button class="button button-secondary full" id="modalPostCancel" type="button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

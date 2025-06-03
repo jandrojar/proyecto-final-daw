@@ -1,0 +1,394 @@
+/* Variables globales */
+:root {
+    --primary-color: #559155;
+    --primary-hover: #80b180;
+
+    --secondary-color: #6b7280;
+    --secondary-hover: #acb1bb;
+
+    --tertiary-color: #979e7e;
+    --tertiary-color: #dfe07c;
+
+    --background-color: #d8dfd8;
+
+    --white: #ffffff;
+    --black: #000000;
+    --text-color: #000000;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --success-color: #22c55e;
+    --error-color: #ef4444;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --radius: 0.5rem;
+}
+
+
+/* Estilos generales */
+html, body {
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+/* Layout */
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: fit-content;
+}
+
+/* Header */
+.header {
+    background-color:  var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Contenedores */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+@media (min-width: 640px) {
+    main {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* User info section */
+#title{
+    padding: 2rem;
+}
+
+.user-info {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    min-height: 215px;
+    width: 80%;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border: 1px solid #f0f0f0; 
+}
+
+.user-info:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-info span {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Table styles */
+table {
+    width: 90%;    
+    border-collapse: collapse;
+    background-color:  var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+thead {
+    background-color: #687e68;
+}
+
+th {
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color:  #809d80;
+}
+
+/* Buttons */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    color:  var(--white);
+}
+
+.button-secondary {
+    transition: all 0.2s;
+    background-color: var(--secondary-color);
+    color:  var(--white);;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.button-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+
+
+/* Animations */
+.button-loader:before,
+.button-loader:after,
+.button-loader {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.button-loader {
+  font-size: 5px;
+  position: relative;
+  bottom: 50%;
+  animation-delay: 0.16s;
+}
+.button-loader:before {
+  left: -3.5em;
+}
+.button-loader:after {
+  left: 3.5em;
+  -webkit-animation-delay: 0.32s;
+  animation-delay: 0.32s;
+}
+.button-loader:before,
+.button-loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em #ffffff;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 #FFF;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em #ffffff;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 #FFF;
+  }
+}
+
+/* Messages */
+.mensaje-container {
+    position: fixed;
+    top:12px;
+    left: 38%;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.875rem;
+    z-index: 100;
+    animation: fadeIn 0.3s ease-out;
+    background-color: var(--black);
+}
+
+.error-mensaje {
+    color: var(--error-color);
+}
+
+.success-mensaje {
+    color: var(--success-color);
+}
+
+/* Actions container */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.actions button {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Oculta elementos según el tamaño de la pantalla */
+.solo-escritorio, .solo-tablet {
+    display: none;
+    color: var(--black); 
+    font-weight: 600;
+}
+
+@media only screen and (min-width: 400px) {
+    .solo-tablet {
+        display: block;        
+    }
+    .solo-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .solo-escritorio {
+        display: block;
+    }
+}
+
+/* Centro el h1 */
+h1 {
+    text-align: center;
+}
+
+/* *** FOOTER *** */
+.footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Ajusta según necesidad */
+    background-color: #333;
+    color:  var(--white);
+    text-align: center;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav {
+    margin: 10px 0;
+}
+
+.footer-nav a {
+    color:  var(--white);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media a {
+    margin: 0 20px;
+}
+
+/* Aquí es donde ajustamo el tamaño de las imágenes */
+.social-media img {
+    width: 25px; 
+    height: 25px; 
+    background-color:  var(--white); 
+    border-radius: 60%;
+    padding: 2px;
+}

@@ -1,0 +1,173 @@
+.card {
+    position: relative;
+    background-color:  var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.card .actions .button {
+    height: 40px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card .actions .button:hover {
+    background-color: var(--primary-hover);
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color:var(--primary-color);
+    color: var(--white);
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px; 
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.card .file.post-tipo {
+    position: absolute;
+    color: var(--white);
+    top: 4%;
+    right: 4%;
+    font-size: large;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.card .file.post-titulo {
+    position: absolute;
+    color: var(--black);
+    max-width: 500px;
+    top: 7%;
+    left: 17%;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(2px); 
+    padding: 0rem 0.5rem;
+    border-radius: 8px; 
+    border: 1px solid rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita a dos líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.card .file {
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.5rem;
+    line-height: 1.8;
+    background-color: transparent;
+    border-radius: var(--radius);
+    border-color: black;
+}
+
+.card-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 1.5s ease-in-out forwards;
+    animation-delay: 1s
+  }
+  
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+.file.post-contenido {
+    text-align: justify;
+    background-color: var(--background-color);
+}
+
+.file.post-fecha_creacion,
+.file.post-fecha_modificacion {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+.file.post-fecha_creacion::before {
+    content: "📅 Creado: ";
+    font-weight: bold;
+}
+
+.file.post-fecha_modificacion::before {
+    content: "✏️ Modificado: ";
+    font-weight: bold;
+}
+
+.file.post-nombre,
+.file.post-apellidos,
+.file.post-email {
+    font-size: 0.9rem;
+}  
+
+.file.post-fecha_creacion,
+.file.post-fecha_modificacion,
+.file.post-nombre,
+.file.post-apellidos,
+.file.post-email {
+    display: inline-block;
+    width: auto;
+    margin-top: 2rem;
+}
+
+.card .image-post, .card .avatar {
+    position: absolute;
+    left: 4%;
+    margin-top: 10px;
+    box-shadow: var(--shadow);
+}
+
+.skeleton {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    position: relative;
+    background: linear-gradient(90deg, #ededed 30%, #cccaca 50%, #ededed 70%);
+    background-size: 400%;
+    animation: shimmer 1.5s infinite linear;
+    height: 300px;
+    width: 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+

@@ -1,0 +1,59 @@
+.hidden {
+    display: none !important;
+}
+
+.full {
+    width: 100% !important;
+}
+
+/* Spinner loading */
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+    display: block; 
+}
+
+.display-flex {
+    display: flex;
+}
+
+.display-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Margins */
+.ml-1 {
+    margin-left: 4px;
+}
+
+.ml-2 {
+    margin-left: 8px;
+}
+
+.mb-1 {
+    margin-bottom: 4px;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+
+
+/* Txt Styles */
+.txt-small {
+    font-size: 0.8rem;
+}
+
+.txt-color-white {
+    color: var(--white) !important;
+}
+
+.txt-color-white:hover {
+    color: var(--primary-color) !important;
+}

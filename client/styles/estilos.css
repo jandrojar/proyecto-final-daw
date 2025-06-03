@@ -1,0 +1,19 @@
+/* STYLES */
+@import "global.css";
+@import "forms.css";
+@import "images.css";
+@import "utilities.css";
+@import "reset.css";
+
+
+/* COMPONENTS */
+@import "./components/details.css";
+@import "./components/menu.css";
+@import "./components/modal.css";
+@import "./components/card.css";
+@import "./components/comments-card.css";
+
+/* PAGES */
+@import "./pages/authentication.css";
+
+

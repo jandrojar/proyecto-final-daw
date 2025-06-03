@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="../../../styles/estilos.css">
+    <script src="./profile.js" defer></script>
+    <script src="../../../js/modal.js" defer></script>
+</head>
+<body>
+
+    <header class="header display-space-around">
+        <div class="logo-container">
+          <div class="logo">
+              <figure><img width="20" src="../../../assets/logo-negro.jpg"></figure>
+          </div>
+          <p class="solo-escritorio logo-texto">interiordesign.com</p>
+        </div>
+        <ul class="menu" id="menu">
+            <li>
+                <a href="../../../../index.html">HOME</a>
+            </li>
+            <li>
+                <a href="../logout/logout.html">LOGOUT</a>
+            </li>
+        </ul>
+      </header>
+
+    <div id="error-mensaje"  class="mensaje-container error-mensaje hidden"></div>
+    <div id="success-mensaje" class="mensaje-container success-mensaje hidden"></div>
+
+    <h1 id="title">Registro Exitoso!!</h1>
+    <div id="user-info" class="user-info">
+        <p class="hidden">Id: <span id="profile-id_usuario"></span></p>
+        <p>Nombre: <span id="profile-nombre"></span></p>
+        <p>Apellidos: <span id="profile-apellidos"></span></p>
+        <p>Email: <span id="profile-email"></span></p>
+        <p>Rol: <span id="profile-rol"></span></p>
+    </div>
+    <div id="profile-loading" class="user-info hidden"><span class="loading-spinner"></span></div>
+    <div class="button-container">
+        <button class="button button-primary" onclick="editCurrentUser()">Editar</button>
+    </div>
+    <table id="table" class="hidden">
+        <thead>
+            <tr>
+                <th>ID Usuario</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Las filas se añadirán aquí dinámicamente -->
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div id="editUserModal" class="modal">
+>
+        <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form onsubmit="handleUpdate(event)" id="editUserForm">
+                <input type="hidden" id="modalId" name="id">
+                <label for="modalName">Nombre:</label>
+                <input type="text" id="modalName" name="name"><br><br>
+                <label for="modalLastName">Apellidos:</label>
+                <input type="text" id="modalLastName" name="modalLastName"><br><br>
+                <label for="modalPassword">Password:</label>
+                <input type="text" id="modalPassword" name="modalPassword"><br><br>
+                <label for="modalEmail">Email:</label>
+                <input type="email" id="modalEmail" name="modalEmail"><br><br>
+                <div id="rol-container" class="hidden">
+                    <label for="modalRol">Rol</label>
+                    <select id="modalRol" name="modalRol">
+                        <option value="0">Administrador</option>
+                        <option value="1">Usuario</option>
+                      </select><br><br>
+                </div>
+                <button class="button button-primary full" type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

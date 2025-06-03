@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="../../../styles/estilos.css">
+    <script src="./autentication.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-container">
+    <!--Icono de home-->
+    <div class="home-icon">
+        <a href="../../../../index.html">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div id="login" class="formulario__container hidden">
+        <form onsubmit="handleLogin(event)">
+            <label for="login-email">Correo electrónico::</label>
+            <input id="login-email" type="text" name="email" required>
+            <label for="login-password">Contraseña:</label>
+            <div class="password-container">
+                <input id="login-password" type="password" name="pwd" required class="hidden-password"> 
+                <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">
+                    <i class="fa fa-eye"></i> <!--Clase para el icono del ojo-->
+                </span> 
+            </div>
+                <button id="login-button" class="button button-primary full" type="submit">Login</span></button>
+        </form>
+        <button id="toggleView" class="button button-secondary full" onclick="toggleView()">Registrarse</button>
+    </div>
+    <div id="registro" class="formulario__container hidden">
+        <form onsubmit="handleRegister(event)">
+            <label for="register-name">Nombre: *</label>
+            <input id="register-name" type="text" name="name" required>
+            <label for="register-apellidos">Apellidos: *</label>
+            <input id="register-apellidos" type="text" name="apellidos" required>
+            <label for="register-email">Correo electrónico: *</label>
+            <input id="register-email" type="email" name="email" required>
+            <label for="register-password">Contraseña: *</label>
+            <div class="password-container">
+                <input id="register-password" type="password" name="pwd" required class="hidden-password"> 
+                <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">
+                    <i class="fa fa-eye"></i>
+                </span> 
+            </div>
+            <label for="register-repeat-password">Confirmar contraseña: *</label>
+            <div class="password-container">
+                <input id="register-repeat-password" type="password" name="repeatPwd" required class="hidden-password"> 
+                <span class="toggle-repeat-password" onclick="togglePasswordVisibility('register-repeat-password')">
+                    <i class="fa fa-eye"></i>
+                </span> 
+            </div>
+            <p style="color:black"><small>* campos obligatorios</small></p>
+            <br>
+            <button class="button button-primary full" type="submit">Registrarse</button>
+        </form>
+        <button id="toggleView" class="button button-secondary full" onclick="toggleView()">Login</button>
+    </div>
+    <div id="error-mensaje"  class="mensaje-container error-mensaje hidden"></div>
+    <div id="success-mensaje" class="mensaje-container success-mensaje hidden"></div>
+</body>
+</html>
