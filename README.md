@@ -1,15 +1,21 @@
 # ProyectoDaw
-El proyecto debería guardarse dentro de la carpeta ejercicios:
-xampp/htdocs
+Este es el proyecto final del ciclo de Desarrollo de Aplicaciones Web (DAW).  
+Desarrollado con JavaScript, HTML, CSS y PHP.  
+Funciona en entorno local con XAMPP.
 
-# BDD CONNECT
-Please paste your BDD user and password to connect:
+# Estructura del proyecto
 
-Path: server/db/datos.php
+El proyecto debe colocarse dentro de la carpeta `htdocs` de XAMPP:
+C:\xampp\htdocs\ProyectoDaw
+
+# Conexión a la base de datos (BDD)
+Para conectar con la base de datos, introduce tu usuario y contraseña de MySQL en el siguiente archivo:
+
+server/db/datos.php
 
 # GIT
-- Ver al path: xamppServer/htdocs
-- ejecuta git clone https://github.com/jandrojar/proyecto-final-daw.git
-- en la terminal desde ese path haz un: git checkout -b [nombre]-[tarea]
+- Abre una terminal en la carpeta: xamppServer/htdocs
+- Clona el repositorio: git clone https://github.com/jandrojar/proyecto-final-daw.git
+- En la terminal desde ese path crea una nueva rama: git checkout -b [nombre]-[tarea]
 (ejemplo: C:\xamppServer\htdocs\ProyectoDaw> checkout -b pepe-estilos)
 
